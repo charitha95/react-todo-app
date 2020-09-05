@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.0",
     "autoprefixer": "^9.8.6",
     "husky": "^4.2.5",
+    "node-sass": "^4.14.1",
     "postcss-cli": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -25,8 +26,8 @@
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:css": "postcss src/styles/global.css -o src/styles/main.css",
-    "watch:css": "postcss src/styles/global.css -o src/styles/main.css"
+    "build:css": "postcss src/styles/global.scss -o src/styles/main.scss",
+    "watch:css": "postcss src/styles/global.scss -o src/styles/main.scss"
   },
   "eslintConfig": {
     "extends": "react-app"
