@@ -1,8 +1,6 @@
 import React from "react";
 import { Button } from "./Button";
 import { CheckOutlined } from "@ant-design/icons";
-// import "../../../app.less";
-import "antd/dist/antd.css";
 
 export default {
   title: "Button",
