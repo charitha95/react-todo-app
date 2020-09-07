@@ -1,14 +1,20 @@
 import React from "react";
-import { Button } from "antd";
 import "./app.less";
+import { SearchOutlined } from "@ant-design/icons";
+import { Button } from "./classification/atoms/Button/Button";
 
 function App() {
   return (
     <section className="card">
-      <Button type="primary">Button</Button>
-      <p className="text-red-300">
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
+      <Button type="primary">Primary Button</Button>
+      <Button
+        type="primary"
+        shape="round"
+        size="large"
+        icon={<SearchOutlined />}
+      >
+        Hellow
+      </Button>
     </section>
   );
 }
