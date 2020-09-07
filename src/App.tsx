@@ -1,6 +1,6 @@
 import React from "react";
 import "./app.less";
-import { SearchOutlined } from "@ant-design/icons";
+import { CheckOutlined } from "@ant-design/icons";
 import { Button } from "./classification/atoms/Button/Button";
 
 function App() {
@@ -9,12 +9,10 @@ function App() {
       <Button type="primary">Primary Button</Button>
       <Button
         type="primary"
-        shape="round"
+        shape="circle"
         size="large"
-        icon={<SearchOutlined />}
-      >
-        Hellow
-      </Button>
+        icon={<CheckOutlined />}
+      ></Button>
     </section>
   );
 }
