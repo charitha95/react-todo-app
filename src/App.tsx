@@ -1,7 +1,7 @@
 import React from "react";
 import "./app.less";
 import { CheckOutlined } from "@ant-design/icons";
-import { Button } from "./classification/atoms/Button/Button";
+import { Button } from "./classification/atoms/Button";
 
 function App() {
   return (
