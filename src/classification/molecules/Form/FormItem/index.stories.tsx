@@ -1,10 +1,10 @@
 import React from "react";
 import { FormItem } from ".";
 import { Form } from "..";
-import { Input } from "../../Input";
+import { Input } from "../../../atoms/Input";
 
 export default {
-  title: "Atoms/Form/FormItem",
+  title: "Molecules/Form",
   component: FormItem,
 };
 
@@ -12,7 +12,7 @@ export const Horizontal = () => {
   return (
     <Form>
       <FormItem label="Username" name="username">
-        <Input />
+        <Input placeholder="default input" />
       </FormItem>
     </Form>
   );
@@ -22,7 +22,7 @@ export const Inline = () => {
   return (
     <Form layout="inline">
       <FormItem label="Username" name="username">
-        <Input />
+        <Input placeholder="default input" />
       </FormItem>
     </Form>
   );
@@ -32,7 +32,7 @@ export const Vertical = () => {
   return (
     <Form layout="vertical">
       <FormItem label="Username" name="username">
-        <Input />
+        <Input placeholder="default input" />
       </FormItem>
     </Form>
   );
@@ -51,7 +51,7 @@ export const Required = () => {
           },
         ]}
       >
-        <Input />
+        <Input placeholder="default input" />
       </FormItem>
     </Form>
   );
