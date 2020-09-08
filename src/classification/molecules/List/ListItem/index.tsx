@@ -49,7 +49,9 @@ export const ListItem: FC<props> = ({
         <Text stroke={isComplete}>{title}</Text>
         <Text classes={`${classNames.type} font-light`}>{type}</Text>
       </section>
-      <section className={classNames.actions}>{children}</section>
+      <section className={`${classNames.actions} flex items-center`}>
+        {children}
+      </section>
     </motion.li>
   );
 };

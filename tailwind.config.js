@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   future: {
     purgeLayersByDefault: true,
     removeDeprecatedGapUtilities: true
@@ -10,9 +11,10 @@ module.exports = {
         cyan: '#319795',
       },
       backgroundColor: {
-        gray: {
-          '100': '#c6f6d5'
-        }
+        todoSuccess: '#BBECE9',
+        todoDanger: '#F6ABAB',
+        todoSuccessHover: '#6BD5CE',
+        todoDangerHover: '#F89090',
       }
     },
   },

@@ -25,7 +25,7 @@ function App() {
         <section className="action-section">
           <Action />
         </section>
-        <main className="item-section">
+        <main className="item-section b">
           <List>
             {asd.map((item, i) => (
               <ListItem
@@ -39,12 +39,13 @@ function App() {
                   shape="circle"
                   size="large"
                   icon={<CheckOutlined />}
-                  classes="mr-2"
+                  classes="mr-2 bg-todoSuccess border-transparent hover:bg-todoSuccessHover"
                 ></Button>
                 <Button
                   type="primary"
                   shape="circle"
                   size="large"
+                  classes="bg-todoDanger border-transparent hover:bg-todoDangerHover"
                   icon={<CloseOutlined />}
                 ></Button>
               </ListItem>
