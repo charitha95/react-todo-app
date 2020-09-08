@@ -1,9 +1,9 @@
 import React from "react";
-import { Button } from "./Button";
+import { Button } from ".";
 import { CheckOutlined } from "@ant-design/icons";
 
 export default {
-  title: "Button",
+  title: "Atoms/Buttons",
   component: Button,
 };
 
