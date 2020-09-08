@@ -4,14 +4,24 @@ import classNames from "./style.module.scss";
 
 interface props {
   title?: string;
-  type?: string;
+  type?: "music" | "sport" | "shopping" | "other" | undefined;
 }
 
 export const ListItem: FC<props> = ({ title, type }) => {
   return (
-    <li className={`${classNames.listItem} ${type} `}>
+    <li
+      className={`${classNames.listItem} ${
+        type === "music"
+          ? `${classNames.music}`
+          : type === "sport"
+          ? `${classNames.sport}`
+          : type === "shopping"
+          ? `${classNames.shopping}`
+          : `${classNames.other}`
+      } flex flex-col bg-white min-h-62 p-4 my-4 relative`}
+    >
       <Text>{title}</Text>
-      <Text>{type}</Text>
+      <Text classes={`${classNames.type} font-light`}>{type}</Text>
     </li>
   );
 };

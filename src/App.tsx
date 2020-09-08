@@ -19,10 +19,10 @@ function App() {
         <ListItem title="My Task List" type="music">
           sss
         </ListItem>
-        <ListItem title="My Task List" type="sports">
+        <ListItem title="My Task List" type="sport">
           sss
         </ListItem>
-        <ListItem title="My Task List" type="music">
+        <ListItem title="My Task List" type="other">
           sss
         </ListItem>
       </List>
