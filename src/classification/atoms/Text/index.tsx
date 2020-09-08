@@ -6,11 +6,23 @@ interface props {
   stroke?: boolean;
   strong?: boolean;
   children?: React.ReactNode;
+  classes?: string;
 }
 
-export const Text: FC<props> = ({ type, stroke, strong, children }) => {
+export const Text: FC<props> = ({
+  type,
+  stroke,
+  strong,
+  classes,
+  children,
+}) => {
   return (
-    <Typography.Text type={type} delete={stroke} strong={strong}>
+    <Typography.Text
+      type={type}
+      delete={stroke}
+      className={`${classes || ""}`}
+      strong={strong}
+    >
       {children}
     </Typography.Text>
   );
