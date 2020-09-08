@@ -8,7 +8,7 @@ interface props {
 
 export const Header: FC<props> = ({ completed, pending }) => {
   return (
-    <header className="flex justify-between">
+    <header className="flex justify-between border-b-2 border-gray-400 pb-4">
       <section>
         <div className="flex items-center font-semibold">
           <h1 className="text-4xl m-0">Welcome </h1>

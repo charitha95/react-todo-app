@@ -1,5 +1,6 @@
 import React from "react";
 import "./app.less";
+import "./style.scss";
 import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { Button } from "./classification/atoms/Button";
 import { List } from "./classification/molecules/List";
@@ -15,32 +16,39 @@ function App() {
   ];
 
   return (
-    <section className="card">
-      <Header pending={2} completed={3} />
-      <List>
-        {asd.map((item, i) => (
-          <ListItem
-            key={i}
-            delay={item.delay}
-            title={item.title}
-            type={item.type}
-          >
-            <Button
-              type="primary"
-              shape="circle"
-              size="large"
-              icon={<CheckOutlined />}
-              classes="mr-2"
-            ></Button>
-            <Button
-              type="primary"
-              shape="circle"
-              size="large"
-              icon={<CloseOutlined />}
-            ></Button>
-          </ListItem>
-        ))}
-      </List>
+    <section className="outter-container">
+      <div className="outter-card">
+        <section className="action-section">
+          <Header pending={2} completed={3} />
+        </section>
+        <section className="inputs-section"></section>
+        <main className="item-section">
+          <List>
+            {asd.map((item, i) => (
+              <ListItem
+                key={i}
+                delay={item.delay}
+                title={item.title}
+                type={item.type}
+              >
+                <Button
+                  type="primary"
+                  shape="circle"
+                  size="large"
+                  icon={<CheckOutlined />}
+                  classes="mr-2"
+                ></Button>
+                <Button
+                  type="primary"
+                  shape="circle"
+                  size="large"
+                  icon={<CloseOutlined />}
+                ></Button>
+              </ListItem>
+            ))}
+          </List>
+        </main>
+      </div>
     </section>
   );
 }
