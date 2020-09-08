@@ -1,12 +1,14 @@
 import React, { FC } from "react";
-import classNames from "./style.module.scss";
 import { Text } from "../../../atoms/Text";
 import { motion } from "framer-motion";
+import classNames from "./style.module.scss";
 
 interface props {
   title?: string;
   type?: "music" | "sport" | "shopping" | "other" | undefined | string;
   delay?: number;
+  isComplete?: boolean;
+  children?: React.ReactNode;
 }
 
 const variants = {
@@ -20,14 +22,19 @@ const variants = {
   hidden: { y: 20, opacity: 0 },
 };
 
-export const ListItem: FC<props> = ({ title, type, delay }) => {
+export const ListItem: FC<props> = ({
+  title,
+  type,
+  delay,
+  isComplete,
+  children,
+}) => {
   return (
     <motion.li
       custom={delay}
       animate="visible"
       variants={variants}
       whileHover={{ scale: 1.04 }}
-      whileTap={{ scale: 0.99 }}
       className={`${classNames.listItem} ${
         type === "music"
           ? `${classNames.music}`
@@ -36,10 +43,13 @@ export const ListItem: FC<props> = ({ title, type, delay }) => {
           : type === "shopping"
           ? `${classNames.shopping}`
           : `${classNames.other}`
-      } flex flex-col bg-white min-h-62 p-4 my-2 relative`}
+      } flex justify-between bg-white min-h-62 p-4 my-2 relative`}
     >
-      <Text>{title}</Text>
-      <Text classes={`${classNames.type} font-light`}>{type}</Text>
+      <section className="flex flex-col">
+        <Text stroke={isComplete}>{title}</Text>
+        <Text classes={`${classNames.type} font-light`}>{type}</Text>
+      </section>
+      <section className={classNames.actions}>{children}</section>
     </motion.li>
   );
 };

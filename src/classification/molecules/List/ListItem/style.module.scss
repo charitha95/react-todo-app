@@ -3,6 +3,15 @@
 .listItem {
   border-radius: $radius;
   font-family: $ff-secondary;
+  .actions {
+    transition: 0.1s;
+    opacity: 0;
+  }
+  &:hover {
+    .actions {
+      opacity: 1;
+    }
+  }
   .type {
     color: $grey;
   }

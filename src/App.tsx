@@ -1,6 +1,6 @@
 import React from "react";
 import "./app.less";
-import { CheckOutlined } from "@ant-design/icons";
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { Button } from "./classification/atoms/Button";
 import { List } from "./classification/molecules/List";
 import { ListItem } from "./classification/molecules/List/ListItem";
@@ -29,7 +29,21 @@ function App() {
             delay={item.delay}
             title={item.title}
             type={item.type}
-          />
+          >
+            <Button
+              type="primary"
+              shape="circle"
+              size="large"
+              icon={<CheckOutlined />}
+              classes="mr-2"
+            ></Button>
+            <Button
+              type="primary"
+              shape="circle"
+              size="large"
+              icon={<CloseOutlined />}
+            ></Button>
+          </ListItem>
         ))}
       </List>
     </section>
