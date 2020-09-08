@@ -9,11 +9,13 @@
     overflow: hidden;
     background-color: white;
 
-    .action-section {
-      padding: 25px 75px;
-    }
+    .header-section,
+    .action-section,
     .item-section {
       padding: 25px 75px;
+    }
+
+    .item-section {
       background-color: #f8f1ea;
     }
   }

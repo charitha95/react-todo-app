@@ -6,6 +6,7 @@ import { Button } from "./classification/atoms/Button";
 import { List } from "./classification/molecules/List";
 import { ListItem } from "./classification/molecules/List/ListItem";
 import { Header } from "./classification/organisms/Header";
+import { Action } from "./classification/organisms/Action";
 
 function App() {
   const asd = [
@@ -18,10 +19,12 @@ function App() {
   return (
     <section className="outter-container">
       <div className="outter-card">
-        <section className="action-section">
+        <section className="header-section">
           <Header pending={2} completed={3} />
         </section>
-        <section className="inputs-section"></section>
+        <section className="action-section">
+          <Action />
+        </section>
         <main className="item-section">
           <List>
             {asd.map((item, i) => (
