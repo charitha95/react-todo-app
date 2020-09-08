@@ -6,6 +6,13 @@ import { List } from "./classification/molecules/List";
 import { ListItem } from "./classification/molecules/List/ListItem";
 
 function App() {
+  const asd = [
+    { key: "0", delay: 1, title: "Do voice training", type: "music" },
+    { key: "1", delay: 2, title: "Go to the gym", type: "sport" },
+    { key: "2", delay: 3, title: "Visit parents", type: "other" },
+    { key: "3", delay: 4, title: "Buy vegetables", type: "shopping" },
+  ];
+
   return (
     <section className="card">
       <Button type="primary">Primary Button</Button>
@@ -16,15 +23,14 @@ function App() {
         icon={<CheckOutlined />}
       ></Button>
       <List>
-        <ListItem title="My Task List" type="music">
-          sss
-        </ListItem>
-        <ListItem title="My Task List" type="sport">
-          sss
-        </ListItem>
-        <ListItem title="My Task List" type="other">
-          sss
-        </ListItem>
+        {asd.map((item, i) => (
+          <ListItem
+            key={i}
+            delay={item.delay}
+            title={item.title}
+            type={item.type}
+          />
+        ))}
       </List>
     </section>
   );

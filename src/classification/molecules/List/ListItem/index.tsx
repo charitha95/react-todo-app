@@ -1,15 +1,33 @@
 import React, { FC } from "react";
-import { Text } from "../../../atoms/Text";
 import classNames from "./style.module.scss";
+import { Text } from "../../../atoms/Text";
+import { motion } from "framer-motion";
 
 interface props {
   title?: string;
-  type?: "music" | "sport" | "shopping" | "other" | undefined;
+  type?: "music" | "sport" | "shopping" | "other" | undefined | string;
+  delay?: number;
 }
 
-export const ListItem: FC<props> = ({ title, type }) => {
+const variants = {
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+    },
+  }),
+  hidden: { y: 20, opacity: 0 },
+};
+
+export const ListItem: FC<props> = ({ title, type, delay }) => {
   return (
-    <li
+    <motion.li
+      custom={delay}
+      animate="visible"
+      variants={variants}
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.99 }}
       className={`${classNames.listItem} ${
         type === "music"
           ? `${classNames.music}`
@@ -18,10 +36,10 @@ export const ListItem: FC<props> = ({ title, type }) => {
           : type === "shopping"
           ? `${classNames.shopping}`
           : `${classNames.other}`
-      } flex flex-col bg-white min-h-62 p-4 my-4 relative`}
+      } flex flex-col bg-white min-h-62 p-4 my-2 relative`}
     >
       <Text>{title}</Text>
       <Text classes={`${classNames.type} font-light`}>{type}</Text>
-    </li>
+    </motion.li>
   );
 };
