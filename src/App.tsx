@@ -4,6 +4,7 @@ import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { Button } from "./classification/atoms/Button";
 import { List } from "./classification/molecules/List";
 import { ListItem } from "./classification/molecules/List/ListItem";
+import { Header } from "./classification/organisms/Header";
 
 function App() {
   const asd = [
@@ -15,13 +16,7 @@ function App() {
 
   return (
     <section className="card">
-      <Button type="primary">Primary Button</Button>
-      <Button
-        type="primary"
-        shape="circle"
-        size="large"
-        icon={<CheckOutlined />}
-      ></Button>
+      <Header />
       <List>
         {asd.map((item, i) => (
           <ListItem
