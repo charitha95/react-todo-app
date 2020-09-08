@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Typography } from "antd";
 
 interface props {
-  type: "secondary" | "success" | "warning" | "danger" | undefined;
+  type?: "secondary" | "success" | "warning" | "danger" | undefined;
   stroke?: boolean;
   strong?: boolean;
   children?: React.ReactNode;
