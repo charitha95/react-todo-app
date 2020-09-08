@@ -16,7 +16,7 @@ function App() {
 
   return (
     <section className="card">
-      <Header />
+      <Header pending={2} completed={3} />
       <List>
         {asd.map((item, i) => (
           <ListItem

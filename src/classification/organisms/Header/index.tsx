@@ -1,6 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
+import { format } from "date-fns";
 
-export const Header = () => {
+interface props {
+  pending: number;
+  completed: number;
+}
+
+export const Header: FC<props> = ({ completed, pending }) => {
   return (
     <header className="flex justify-between">
       <section>
@@ -8,11 +14,15 @@ export const Header = () => {
           <h1 className="text-4xl m-0">Welcome </h1>
           <span className="ml-2 mt-3">to charitha's todo list</span>
         </div>
-        <label className="text-xl font-semibold">04 september 2020</label>
+        <label className="text-xl font-semibold">
+          {format(new Date(), "LLLL d, yyyy")}
+        </label>
       </section>
       <section className="flex items-center">
-        <h1 className="text-4xl m-0">04 </h1>
-        <span className="ml-2 mt-3 text-gray-500 font-semibold">/10</span>
+        <h1 className="text-4xl m-0">{completed} </h1>
+        <span className="ml-2 mt-3 text-gray-500 font-semibold">
+          /{completed + pending}
+        </span>
       </section>
     </header>
   );
