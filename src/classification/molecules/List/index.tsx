@@ -4,6 +4,6 @@ interface props {
   children?: React.ReactNode;
 }
 
-export const ListItem: FC<props> = ({ children }) => {
-  return <li>{children}</li>;
+export const List: FC<props> = ({ children }) => {
+  return <ul>{children}</ul>;
 };

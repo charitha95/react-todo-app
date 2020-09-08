@@ -1,0 +1,19 @@
+@import "../../../../styles/variables";
+
+.listItem {
+  background: white;
+  border-radius: $radius;
+  min-height: 62px;
+  padding: 18px;
+  margin: 15px 0;
+  position: relative;
+  &:before {
+    content: "";
+    height: 20px;
+    width: 4px;
+    background-color: darkmagenta;
+    position: absolute;
+    border-radius: $radius;
+    left: -2px;
+  }
+}

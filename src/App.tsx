@@ -2,6 +2,8 @@ import React from "react";
 import "./app.less";
 import { CheckOutlined } from "@ant-design/icons";
 import { Button } from "./classification/atoms/Button";
+import { List } from "./classification/molecules/List";
+import { ListItem } from "./classification/molecules/List/ListItem";
 
 function App() {
   return (
@@ -13,6 +15,17 @@ function App() {
         size="large"
         icon={<CheckOutlined />}
       ></Button>
+      <List>
+        <ListItem title="My Task List" type="music">
+          sss
+        </ListItem>
+        <ListItem title="My Task List" type="sports">
+          sss
+        </ListItem>
+        <ListItem title="My Task List" type="music">
+          sss
+        </ListItem>
+      </List>
     </section>
   );
 }

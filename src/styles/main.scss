@@ -18574,17 +18574,18 @@ video {
   animation: bounce 1s infinite;
 }
 
-.card {
-  font-weight: 700;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: 0.25rem;
+ul,
+li {
+  font-weight: 400;
 }
 
 svg {
   vertical-align: baseline;
+}
+
+.card {
+  background-color: #f8f1ea;
+  padding: 150px;
 }
 
 @media (min-width: 640px) {
