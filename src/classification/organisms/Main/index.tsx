@@ -27,6 +27,7 @@ export const Main: FC<props> = () => {
   return (
     <Row>
       <Col xs={24} xl={12}>
+        <h2 className="text-lg">Todo</h2>
         <List classes="h-78 overflow-auto">
           {list.map((item, i) => (
             <ListItem
@@ -54,6 +55,7 @@ export const Main: FC<props> = () => {
         </List>
       </Col>
       <Col xs={24} xl={12}>
+        <h2 className="text-lg">Completed</h2>
         <List classes="h-78 overflow-auto">
           {list.map((item, i) => (
             <ListItem
