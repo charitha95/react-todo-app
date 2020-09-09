@@ -12,7 +12,7 @@ interface props {
   classes?: string;
   size?: SizeType;
   htmlType?: ButtonHTMLType;
-  onClick?: React.MouseEventHandler<HTMLElement>;
+  onClick?: React.MouseEventHandler<HTMLElement> | undefined;
 }
 
 export const Button: FC<props> = ({

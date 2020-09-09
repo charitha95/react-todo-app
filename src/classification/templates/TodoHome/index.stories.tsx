@@ -21,5 +21,14 @@ export const too = () => {
     { key: "9", delay: 9, title: "Buy vegetables", type: "shopping" },
     { key: "10", delay: 10, title: "Buy vegetables", type: "shopping" },
   ];
-  return <TodoHome pending={pending} completed={completed} />;
+
+  const addTodoHandler = () => {};
+
+  return (
+    <TodoHome
+      pending={pending}
+      completed={completed}
+      addTodoHandler={addTodoHandler}
+    />
+  );
 };
