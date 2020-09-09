@@ -32,12 +32,12 @@ export const Action: FC<props> = ({
       <Row gutter={24}>
         <Col xs={24} xl={8}>
           <FormItem label="Title" name="title" rules={titleValidation}>
-            <Input placeholder="title of the todo item" />
+            <Input placeholder="Title of the todo item" />
           </FormItem>
         </Col>
         <Col xs={24} xl={4}>
           <FormItem label="Type" name="type" rules={typeValidation}>
-            <Dropdown placeholder="type" />
+            <Dropdown placeholder="Type" />
           </FormItem>
         </Col>
         <Col
