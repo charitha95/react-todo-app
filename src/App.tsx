@@ -1,6 +1,5 @@
 import React from "react";
 import "./app.less";
-import "./style.scss";
 import { TodoHome } from "./classification/templates/TodoHome";
 
 function App() {
