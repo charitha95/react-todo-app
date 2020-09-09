@@ -29,6 +29,7 @@ export const too = () => {
       pending={pending}
       completed={completed}
       addTodoHandler={addTodoHandler}
+      completeTodoHandler={() => {}}
     />
   );
 };

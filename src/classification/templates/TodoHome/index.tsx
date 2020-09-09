@@ -3,21 +3,21 @@ import { Header } from "../../organisms/Header";
 import { Action } from "../../organisms/Action";
 import { Main } from "../../organisms/Main";
 import classNames from "./style.module.scss";
-
-interface todo {
-  title?: string;
-  type?: "music" | "sport" | "shopping" | "other" | undefined | string;
-  delay?: number;
-  isComplete?: boolean;
-}
+import { todo } from "../../../models/todo";
 
 interface props {
   completed: todo[];
   pending: todo[];
   addTodoHandler: React.MouseEventHandler<HTMLElement> | undefined;
+  completeTodoHandler: Function;
 }
 
-export const TodoHome: FC<props> = ({ pending, completed, addTodoHandler }) => {
+export const TodoHome: FC<props> = ({
+  pending,
+  completed,
+  addTodoHandler,
+  completeTodoHandler,
+}) => {
   const titleValidation = [
     {
       required: true,
@@ -50,7 +50,11 @@ export const TodoHome: FC<props> = ({ pending, completed, addTodoHandler }) => {
           />
         </section>
         <main className={`${classNames.itemSection}`}>
-          <Main pending={pending} completed={completed} />
+          <Main
+            pending={pending}
+            completed={completed}
+            completeTodoHandler={completeTodoHandler}
+          />
         </main>
       </div>
     </section>

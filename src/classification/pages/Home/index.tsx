@@ -1,12 +1,6 @@
 import React, { FC, useState } from "react";
 import { TodoHome } from "../../templates/TodoHome";
-
-interface todo {
-  title?: string;
-  type?: "music" | "sport" | "shopping" | "other" | undefined | string;
-  delay?: number;
-  isComplete?: boolean;
-}
+import { todo } from "../../../models/todo";
 
 export const Home: FC = () => {
   const [pendingList, setPendingList] = useState<todo[]>([]);
@@ -19,11 +13,17 @@ export const Home: FC = () => {
     ]);
   };
 
+  const completeTodoHandler = (todo: todo) => {
+    console.log(todo);
+    // setCompletedList([...completedList, todo]);
+  };
+
   return (
     <TodoHome
       pending={pendingList}
       completed={completedList}
       addTodoHandler={addTodoHandler}
+      completeTodoHandler={completeTodoHandler}
     />
   );
 };

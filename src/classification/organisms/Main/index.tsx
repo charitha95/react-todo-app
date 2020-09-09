@@ -8,20 +8,19 @@ import {
   CloseOutlined,
   RollbackOutlined,
 } from "@ant-design/icons";
-
-interface todo {
-  title?: string;
-  type?: "music" | "sport" | "shopping" | "other" | undefined | string;
-  delay?: number;
-  isComplete?: boolean;
-}
+import { todo } from "../../../models/todo";
 
 interface props {
   completed: todo[];
   pending: todo[];
+  completeTodoHandler: Function;
 }
 
-export const Main: FC<props> = ({ completed, pending }) => {
+export const Main: FC<props> = ({
+  completed,
+  pending,
+  completeTodoHandler,
+}) => {
   return (
     <Row>
       <Col xs={24} xl={12}>
@@ -40,6 +39,9 @@ export const Main: FC<props> = ({ completed, pending }) => {
                 size="large"
                 icon={<CheckOutlined />}
                 classes="mr-2 bg-todoSuccess border-transparent hover:bg-todoSuccessHover"
+                onClick={() => {
+                  completeTodoHandler(item);
+                }}
               ></Button>
               <Button
                 type="primary"
