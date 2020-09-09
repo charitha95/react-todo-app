@@ -30,6 +30,7 @@ export const too = () => {
       completed={completed}
       addTodoHandler={addTodoHandler}
       completeTodoHandler={() => {}}
+      moveToCompleteHandler={() => {}}
     />
   );
 };

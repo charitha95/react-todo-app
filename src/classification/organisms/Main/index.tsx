@@ -14,12 +14,14 @@ interface props {
   completed: todo[];
   pending: todo[];
   completeTodoHandler: Function;
+  moveToCompleteHandler: Function;
 }
 
 export const Main: FC<props> = ({
   completed,
   pending,
   completeTodoHandler,
+  moveToCompleteHandler,
 }) => {
   return (
     <Row>
@@ -40,7 +42,7 @@ export const Main: FC<props> = ({
                 icon={<CheckOutlined />}
                 classes="mr-2 bg-todoSuccess border-transparent hover:bg-todoSuccessHover"
                 onClick={() => {
-                  completeTodoHandler(item);
+                  moveToCompleteHandler(item);
                 }}
               ></Button>
               <Button
@@ -49,6 +51,9 @@ export const Main: FC<props> = ({
                 size="large"
                 classes="bg-todoDanger border-transparent hover:bg-todoDangerHover"
                 icon={<CloseOutlined />}
+                onClick={() => {
+                  completeTodoHandler(item);
+                }}
               ></Button>
             </ListItem>
           ))}

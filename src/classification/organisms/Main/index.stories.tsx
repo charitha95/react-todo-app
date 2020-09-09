@@ -29,6 +29,7 @@ export const PendingAndCompleted = () => {
         pending={pending}
         completed={completed}
         completeTodoHandler={() => {}}
+        moveToCompleteHandler={() => {}}
       />
     </div>
   );

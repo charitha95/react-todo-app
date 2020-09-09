@@ -10,6 +10,7 @@ interface props {
   pending: todo[];
   addTodoHandler: React.MouseEventHandler<HTMLElement> | undefined;
   completeTodoHandler: Function;
+  moveToCompleteHandler: Function;
 }
 
 export const TodoHome: FC<props> = ({
@@ -17,6 +18,7 @@ export const TodoHome: FC<props> = ({
   completed,
   addTodoHandler,
   completeTodoHandler,
+  moveToCompleteHandler,
 }) => {
   const titleValidation = [
     {
@@ -54,6 +56,7 @@ export const TodoHome: FC<props> = ({
             pending={pending}
             completed={completed}
             completeTodoHandler={completeTodoHandler}
+            moveToCompleteHandler={moveToCompleteHandler}
           />
         </main>
       </div>
