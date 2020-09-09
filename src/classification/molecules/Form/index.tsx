@@ -10,6 +10,7 @@ interface props {
   onFinish?: ((values: any) => void) | undefined;
   onFinishFailed?: ((values: any) => void) | undefined;
   children?: React.ReactNode;
+  formInstance?: any;
 }
 
 export const Form: FC<props> = ({
@@ -19,9 +20,11 @@ export const Form: FC<props> = ({
   onFinish,
   onFinishFailed,
   children,
+  formInstance,
 }) => {
   return (
     <AntForm
+      form={formInstance}
       name={name}
       layout={layout}
       initialValues={{ ...initialValues }}

@@ -46,7 +46,9 @@ export const ListItem: FC<props> = ({
       } flex justify-between bg-white min-h-62 p-4 my-2 relative`}
     >
       <section className="flex flex-col">
-        <Text stroke={isComplete}>{title}</Text>
+        <Text stroke={isComplete}>{`${title
+          ?.charAt(0)
+          .toUpperCase()}${title?.slice(1)}`}</Text>
         <Text classes={`${classNames.type} font-light`}>{type}</Text>
       </section>
       <section className={`${classNames.actions} flex items-center`}>

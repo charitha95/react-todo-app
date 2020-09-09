@@ -8,20 +8,23 @@ import {
   CloseOutlined,
   RollbackOutlined,
 } from "@ant-design/icons";
-
-interface todo {
-  title?: string;
-  type?: "music" | "sport" | "shopping" | "other" | undefined | string;
-  delay?: number;
-  isComplete?: boolean;
-}
+import { todo } from "../../../models/todo";
 
 interface props {
   completed: todo[];
   pending: todo[];
+  completeTodoHandler: Function;
+  moveToCompleteHandler: Function;
+  undoCompleteHandler: Function;
 }
 
-export const Main: FC<props> = ({ completed, pending }) => {
+export const Main: FC<props> = ({
+  completed,
+  pending,
+  completeTodoHandler,
+  moveToCompleteHandler,
+  undoCompleteHandler,
+}) => {
   return (
     <Row>
       <Col xs={24} xl={12}>
@@ -40,6 +43,9 @@ export const Main: FC<props> = ({ completed, pending }) => {
                 size="large"
                 icon={<CheckOutlined />}
                 classes="mr-2 bg-todoSuccess border-transparent hover:bg-todoSuccessHover"
+                onClick={() => {
+                  moveToCompleteHandler(item);
+                }}
               ></Button>
               <Button
                 type="primary"
@@ -47,6 +53,9 @@ export const Main: FC<props> = ({ completed, pending }) => {
                 size="large"
                 classes="bg-todoDanger border-transparent hover:bg-todoDangerHover"
                 icon={<CloseOutlined />}
+                onClick={() => {
+                  completeTodoHandler({ isFromPending: true, todo: item });
+                }}
               ></Button>
             </ListItem>
           ))}
@@ -69,6 +78,9 @@ export const Main: FC<props> = ({ completed, pending }) => {
                 size="large"
                 icon={<RollbackOutlined />}
                 classes="mr-2 bg-todoSuccess border-transparent hover:bg-todoSuccessHover"
+                onClick={() => {
+                  undoCompleteHandler(item);
+                }}
               ></Button>
               <Button
                 type="primary"
@@ -76,6 +88,9 @@ export const Main: FC<props> = ({ completed, pending }) => {
                 size="large"
                 classes="bg-todoDanger border-transparent hover:bg-todoDangerHover"
                 icon={<CloseOutlined />}
+                onClick={() => {
+                  completeTodoHandler({ isFromPending: false, todo: item });
+                }}
               ></Button>
             </ListItem>
           ))}

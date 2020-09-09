@@ -25,7 +25,13 @@ export const PendingAndCompleted = () => {
 
   return (
     <div style={{ background: "#f8f1ea", padding: 10 }}>
-      <Main pending={pending} completed={completed} />
+      <Main
+        pending={pending}
+        completed={completed}
+        completeTodoHandler={() => {}}
+        moveToCompleteHandler={() => {}}
+        undoCompleteHandler={() => {}}
+      />
     </div>
   );
 };

@@ -26,7 +26,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "tailwindcss": "^1.8.2",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "uuid": "^8.3.0"
   },
   "scripts": {
     "start": "npm run watch:css && craco start",
