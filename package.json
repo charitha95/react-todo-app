@@ -36,6 +36,7 @@
     "build:css": "postcss src/styles/global.scss -o src/styles/main.scss",
     "watch:css": "postcss src/styles/global.scss -o src/styles/main.scss",
     "storybook": "start-storybook -p 6006 -s public",
+    "sb": "npm run storybook",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {

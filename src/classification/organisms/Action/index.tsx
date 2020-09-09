@@ -12,11 +12,11 @@ export const Action = () => {
       <Row gutter={24}>
         <Col xs={24} xl={8}>
           <FormItem label="Title" name="title">
-            <Input placeholder="title of the todo" />
+            <Input placeholder="title of the todo item" />
           </FormItem>
         </Col>
         <Col xs={24} xl={4}>
-          <FormItem label="Title" name="title">
+          <FormItem label="Type" name="type">
             <Dropdown placeholder="type" />
           </FormItem>
         </Col>

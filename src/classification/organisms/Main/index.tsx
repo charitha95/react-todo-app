@@ -9,27 +9,25 @@ import {
   RollbackOutlined,
 } from "@ant-design/icons";
 
-interface props {}
+interface todo {
+  title?: string;
+  type?: "music" | "sport" | "shopping" | "other" | undefined | string;
+  delay?: number;
+  isComplete?: boolean;
+}
 
-export const Main: FC<props> = () => {
-  const list = [
-    { key: "0", delay: 1, title: "Do voice training", type: "music" },
-    { key: "1", delay: 2, title: "Go to the gym", type: "sport" },
-    { key: "2", delay: 3, title: "Visit parents", type: "other" },
-    { key: "3", delay: 4, title: "Buy vegetables", type: "shopping" },
-    { key: "4", delay: 4, title: "Buy vegetables", type: "shopping" },
-    { key: "5", delay: 5, title: "Buy vegetables", type: "shopping" },
-    { key: "6", delay: 6, title: "Buy vegetables", type: "shopping" },
-    { key: "7", delay: 7, title: "Buy vegetables", type: "shopping" },
-    { key: "8", delay: 8, title: "Buy vegetables", type: "shopping" },
-  ];
+interface props {
+  completed: todo[];
+  pending: todo[];
+}
 
+export const Main: FC<props> = ({ completed, pending }) => {
   return (
     <Row>
       <Col xs={24} xl={12}>
         <h2 className="text-lg">Todo</h2>
         <List classes="h-78 overflow-auto">
-          {list.map((item, i) => (
+          {pending.map((item, i) => (
             <ListItem
               key={i}
               delay={item.delay}
@@ -57,7 +55,7 @@ export const Main: FC<props> = () => {
       <Col xs={24} xl={12}>
         <h2 className="text-lg">Completed</h2>
         <List classes="h-78 overflow-auto">
-          {list.map((item, i) => (
+          {completed.map((item, i) => (
             <ListItem
               key={i}
               delay={item.delay}
