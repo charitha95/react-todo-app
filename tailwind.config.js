@@ -11,10 +11,13 @@ module.exports = {
         cyan: '#319795',
       },
       backgroundColor: {
-        todoSuccess: '#BBECE9',
-        todoDanger: '#F6ABAB',
-        todoSuccessHover: '#6BD5CE',
-        todoDangerHover: '#F89090',
+        todoSuccess: '#65DE86',
+        todoDanger: '#FB789B',
+        todoSuccessHover: '#54CE75',
+        todoDangerHover: '#FE5885',
+      },
+      height: {
+        '78': '30rem'
       }
     },
   },

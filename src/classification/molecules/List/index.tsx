@@ -4,6 +4,7 @@ import classNames from "./style.module.scss";
 
 interface props {
   children?: React.ReactNode;
+  classes?: string;
 }
 
 const container = {
@@ -19,10 +20,10 @@ const container = {
   },
 };
 
-export const List: FC<props> = ({ children }) => {
+export const List: FC<props> = ({ children, classes }) => {
   return (
     <motion.ul
-      className={`${classNames.container}`}
+      className={`${classNames.container} ${classes}`}
       variants={container}
       initial="hidden"
       animate="visible"
