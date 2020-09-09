@@ -11,6 +11,8 @@ interface props {
   addTodoHandler: React.MouseEventHandler<HTMLElement> | undefined;
   completeTodoHandler: Function;
   moveToCompleteHandler: Function;
+  undoCompleteHandler: Function;
+  formInstance?: any;
 }
 
 export const TodoHome: FC<props> = ({
@@ -19,6 +21,8 @@ export const TodoHome: FC<props> = ({
   addTodoHandler,
   completeTodoHandler,
   moveToCompleteHandler,
+  undoCompleteHandler,
+  formInstance,
 }) => {
   const titleValidation = [
     {
@@ -49,6 +53,7 @@ export const TodoHome: FC<props> = ({
             onFinishFailed={onFinishFailed}
             typeValidation={typeValidation}
             titleValidation={titleValidation}
+            formInstance={formInstance}
           />
         </section>
         <main className={`${classNames.itemSection}`}>
@@ -57,6 +62,7 @@ export const TodoHome: FC<props> = ({
             completed={completed}
             completeTodoHandler={completeTodoHandler}
             moveToCompleteHandler={moveToCompleteHandler}
+            undoCompleteHandler={undoCompleteHandler}
           />
         </main>
       </div>

@@ -12,6 +12,7 @@ interface props {
   typeValidation?: Rule[];
   onFinish?: ((values: any) => void) | undefined;
   onFinishFailed?: ((values: any) => void) | undefined;
+  formInstance?: any;
 }
 
 export const Action: FC<props> = ({
@@ -19,9 +20,15 @@ export const Action: FC<props> = ({
   typeValidation,
   onFinish,
   onFinishFailed,
+  formInstance,
 }) => {
   return (
-    <Form layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed}>
+    <Form
+      formInstance={formInstance}
+      layout="vertical"
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+    >
       <Row gutter={24}>
         <Col xs={24} xl={8}>
           <FormItem label="Title" name="title" rules={titleValidation}>

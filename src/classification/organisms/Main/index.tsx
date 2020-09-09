@@ -15,6 +15,7 @@ interface props {
   pending: todo[];
   completeTodoHandler: Function;
   moveToCompleteHandler: Function;
+  undoCompleteHandler: Function;
 }
 
 export const Main: FC<props> = ({
@@ -22,6 +23,7 @@ export const Main: FC<props> = ({
   pending,
   completeTodoHandler,
   moveToCompleteHandler,
+  undoCompleteHandler,
 }) => {
   return (
     <Row>
@@ -52,7 +54,7 @@ export const Main: FC<props> = ({
                 classes="bg-todoDanger border-transparent hover:bg-todoDangerHover"
                 icon={<CloseOutlined />}
                 onClick={() => {
-                  completeTodoHandler(item);
+                  completeTodoHandler({ isFromPending: true, todo: item });
                 }}
               ></Button>
             </ListItem>
@@ -76,6 +78,9 @@ export const Main: FC<props> = ({
                 size="large"
                 icon={<RollbackOutlined />}
                 classes="mr-2 bg-todoSuccess border-transparent hover:bg-todoSuccessHover"
+                onClick={() => {
+                  undoCompleteHandler(item);
+                }}
               ></Button>
               <Button
                 type="primary"
@@ -83,6 +88,9 @@ export const Main: FC<props> = ({
                 size="large"
                 classes="bg-todoDanger border-transparent hover:bg-todoDangerHover"
                 icon={<CloseOutlined />}
+                onClick={() => {
+                  completeTodoHandler({ isFromPending: false, todo: item });
+                }}
               ></Button>
             </ListItem>
           ))}

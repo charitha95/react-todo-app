@@ -31,6 +31,7 @@ export const too = () => {
       addTodoHandler={addTodoHandler}
       completeTodoHandler={() => {}}
       moveToCompleteHandler={() => {}}
+      undoCompleteHandler={() => {}}
     />
   );
 };
