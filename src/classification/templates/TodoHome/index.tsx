@@ -45,7 +45,7 @@ export const TodoHome: FC<props> = ({
     <section className={`${classNames.outterContainer}`}>
       <div className={`${classNames.outterCard}`}>
         <section className={`${classNames.headerSection}`}>
-          <Header pending={2} completed={3} />
+          <Header pending={pending.length} completed={completed.length} />
         </section>
         <section className={`${classNames.actionSection}`}>
           <Action

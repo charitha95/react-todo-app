@@ -1,9 +1,9 @@
 import React, { FC, useState } from "react";
 import { TodoHome } from "../../templates/TodoHome";
 import { todo } from "../../../models/todo";
+import { Form as AntForm } from "antd";
 // @ts-ignore
 import { v4 as uuid } from "uuid";
-import { Form as AntForm } from "antd";
 
 export const Home: FC = () => {
   const [pendingList, setPendingList] = useState<todo[]>([]);
@@ -35,18 +35,14 @@ export const Home: FC = () => {
   const moveToCompleteHandler = (todo: todo): void => {
     setCompletedList([...completedList, todo]);
     setPendingList(pendingList.filter((i) => i.id !== todo.id));
-    console.log("@moveToCompleteHandler-pending", pendingList);
-    console.log("@moveToCompleteHandler-complete", completedList);
   };
 
   // undo completed item
   const undoCompleteHandler = (todo: todo): void => {
     setCompletedList(completedList.filter((i) => i.id !== todo.id));
     setPendingList([...pendingList, todo]);
-
-    console.log("@moveToCompleteHandler-pending", pendingList);
-    console.log("@moveToCompleteHandler-complete", completedList);
   };
+
   return (
     <TodoHome
       pending={pendingList}
