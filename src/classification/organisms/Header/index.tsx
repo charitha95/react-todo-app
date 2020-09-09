@@ -15,7 +15,7 @@ export const Header: FC<props> = ({ completed, pending }) => {
       scale: 1,
       transition: {
         type: "spring",
-        velocity: transform([0, 5], [250, 0])(0),
+        velocity: transform([0, 5], [150, 0])(0),
         stiffness: 700,
         damping: 80,
       },
