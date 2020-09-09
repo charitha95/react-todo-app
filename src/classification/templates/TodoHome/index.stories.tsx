@@ -1,12 +1,11 @@
 import React from "react";
-import { Main } from ".";
+import { TodoHome } from ".";
 
 export default {
-  title: "Organisms/Main",
-  component: Main,
+  title: "Templates/TodoHome",
 };
 
-export const PendingAndCompleted = () => {
+export const too = () => {
   const pending = [
     { key: "0", delay: 1, title: "Do voice training", type: "music" },
     { key: "1", delay: 2, title: "Go to the gym", type: "sport" },
@@ -22,10 +21,5 @@ export const PendingAndCompleted = () => {
     { key: "9", delay: 9, title: "Buy vegetables", type: "shopping" },
     { key: "10", delay: 10, title: "Buy vegetables", type: "shopping" },
   ];
-
-  return (
-    <div style={{ background: "#f8f1ea", padding: 10 }}>
-      <Main pending={pending} completed={completed} />
-    </div>
-  );
+  return <TodoHome pending={pending} completed={completed} />;
 };

@@ -1,21 +1,21 @@
-.outter-container {
+.outterContainer {
   max-width: 1440px;
   margin: auto;
   margin-top: 85px;
-  .outter-card {
+  .outterCard {
     margin: auto;
     background-color: white;
     border-radius: 18px;
     overflow: hidden;
     background-color: white;
 
-    .header-section,
-    .action-section,
-    .item-section {
+    .headerSection,
+    .actionSection,
+    .itemSection {
       padding: 25px 75px;
     }
 
-    .item-section {
+    .itemSection {
       background-color: #f8f1ea;
     }
   }
