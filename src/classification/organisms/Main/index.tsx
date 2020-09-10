@@ -38,8 +38,8 @@ export const Main: FC<props> = ({
   };
 
   return (
-    <Row>
-      <Col xs={24} xl={12}>
+    <Row gutter={24}>
+      <Col xs={24} md={12} xl={12}>
         <h2 className="text-lg">Todo</h2>
         <List classes="h-78 overflow-auto">
           {pending.length ? (
@@ -88,7 +88,7 @@ export const Main: FC<props> = ({
           )}
         </List>
       </Col>
-      <Col xs={24} xl={12}>
+      <Col xs={24} md={12} xl={12} className="mt-8 md:mt-0 lg:mt-0">
         <h2 className="text-lg">Completed</h2>
         <List classes="h-78 overflow-auto">
           {completed.length ? (
