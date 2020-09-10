@@ -76,7 +76,9 @@ export const TodoHome: FC<props> = ({
   };
 
   return (
-    <section className={`${classNames.outterContainer}`}>
+    <section
+      className={`${classNames.outterContainer} m-6 lg:m-auto lg:mt-16 max-w-6xl`}
+    >
       <div className={`${classNames.outterCard}`}>
         <motion.section
           initial="hidden"
