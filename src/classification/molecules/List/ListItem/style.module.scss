@@ -1,0 +1,48 @@
+@import "../../../../styles/variables";
+
+.listItem {
+  border-radius: $radius;
+  font-family: $ff-secondary;
+  .actions {
+    transition: 0.2s;
+    opacity: 0;
+    transform: scale(0);
+  }
+  &:hover {
+    .actions {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .type {
+    color: $grey;
+  }
+  &:before {
+    content: "";
+    height: 20px;
+    width: 4px;
+    position: absolute;
+    border-radius: $radius;
+    left: -2px;
+  }
+  &.sport {
+    &:before {
+      background-color: $pink-red;
+    }
+  }
+  &.shopping {
+    &:before {
+      background-color: $lime-green;
+    }
+  }
+  &.music {
+    &:before {
+      background-color: $purple;
+    }
+  }
+  &.other {
+    &:before {
+      background-color: $sky-blue;
+    }
+  }
+}

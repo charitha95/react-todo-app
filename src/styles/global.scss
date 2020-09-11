@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul,
+li {
+  font-weight: 400;
+}
+svg {
+  vertical-align: baseline;
+}
