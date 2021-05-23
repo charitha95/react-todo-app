@@ -7,7 +7,7 @@ Demo: https://react-todo-app-cg.netlify.app/ <br/>
 
 ## Description :newspaper:
 
-React todo app is an application developed using cra. This application uses modern UI development and collaboration packages such as  Storybook Js. Also as an experiment, I have used tailwind CSS in this project. But personally, I am not happy with that. 
+Experimental react todo app which uses Ant Design as a UI library with Tailwind utility-driven css framework. This follows atomic design system principles for react app. Also this is integrated with Storybooks.
 <br/><br/>
 
 ## Installing :wrench:
